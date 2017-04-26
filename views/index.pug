@@ -1,0 +1,12 @@
+html
+  head
+    title= title
+  body
+    h1= message
+    script(src='https://code.jquery.com/jquery-3.2.1.min.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js')
+    link(href='https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css', rel='stylesheet')
+    - $('select').select2();
+
+    label(for='id_label_single') Choose a city: 
+    select(class='js-example-basic-single js-states form-control', id='id_label_single')
