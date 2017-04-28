@@ -1,8 +1,10 @@
-var fetchWeather = require('fetchWeather')
+// var fetchWeather = require('fetchWeather')
 var express = require('express')
 var app = express()
-var path = require('path');
-// app.set('view engine', 'pug')
+var path = require('path')
+
+//Controllers
+var fetchWeather = require('./fetchWeather')
 
 app.listen(8000, function () {
     app.get('/', function (req, res) {
@@ -10,6 +12,7 @@ app.listen(8000, function () {
       // res.render('index', { title: 'Hey', message: 'Hello there!' })
     })
     app.get('/forecasts', function(req, res) {
-      res.json(fetchWeather.fetchForecast())
+      fetchWeather.fetchForecast()
+      res.json(JSON.stringify(app.locals.val))
     })
 })
