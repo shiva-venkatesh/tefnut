@@ -1,44 +1,49 @@
-var express = require('express')
-var app = express()
+import express from 'express'
 
-var rp = require('request-promise');
+export default class fetchWeather {
 
-var baseURL = 'http://dataservice.accuweather.com'
-var location_code = 204108
+  var app = express()
 
-exports.fetchForecast = function fetchForecast() {
+  var rp = require('request-promise');
 
-  var store
-  var url = baseURL + '/forecasts/v1/hourly/1hour/' + location_code
-  var config_properties = { apikey: 'DcLAlS5lGA5mYPJvn4hoGZQN3aGS7DdE',
-                            language: 'en-us',
-                            details: true, 
-                            metric: true }
-  // request(url, qs:config_properties)
-  //   .then(function(response) {
-  //     app.get('/forecasts', function(req, res) {
-  //       res.json(response)
-  //     })
-  //  var a = app.get('/forecasts', function(req, res) {
-  //       res.json(response)
-  //     })
-  //   })
+  constructor() {
+    const baseURL = 'http://dataservice.accuweather.com'
+    const location_code = 204108
+    this.fetchForecast = this.fetchForecast.bind(this)
+  }
+  function fetchForecast() {
+    var store
+    var url = this.baseURL + '/forecasts/v1/hourly/1hour/' + this.location_code
+    var config_properties = {
+      apikey: 'DcLAlS5lGA5mYPJvn4hoGZQN3aGS7DdE',
+      language: 'en-us',
+      details: true,
+      metric: true
+    }
+    // request(url, qs:config_properties)
+    //   .then(function(response) {
+    //     app.get('/forecasts', function(req, res) {
+    //       res.json(response)
+    //     })
+    //  var a = app.get('/forecasts', function(req, res) {
+    //       res.json(response)
+    //     })
+    //   })
     //
-var options = {
-    uri: url,
-    qs: config_properties,
-    headers: {
+    var options = {
+      uri: url,
+      qs: config_properties,
+      headers: {
         'User-Agent': 'Request-Promise'
-    },
-    json: true // Automatically parses the JSON string in the response
-};
+      },
+      json: true // Automatically parses the JSON string in the response
+    };
 
-rp(options)
+    rp(options)
     .then(function(){app.locals.val = response})
     .catch(function (err) {
-        // API call failed...
-        console.log(err + ' API call failed')
+      // API call failed...
+      console.log(err + ' API call failed')
     })
+  }
 }
-
-

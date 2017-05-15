@@ -1,0 +1,39 @@
+/* CSS declarations go here */
+
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+  color: white;
+  background-color: #315481;
+  background: -moz-linear-gradient(top, #309dcf 0%, #63b6db 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #309dcf 0%,#63b6db 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #309dcf 0%,#63b6db 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#309dcf', endColorstr='#63b6db',GradientType=0 ); /* IE6-9 */
+
+  background-attachment: fixed;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  padding: 0;
+  margin: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-container{
+  width: 100%;
+  text-align: center;
+  border: 3px;
+}
+
+#brand-heading{
+  text-align: center;
+}
+
+#login-box{
+  display: inline-block;
+}

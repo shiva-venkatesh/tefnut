@@ -1,10 +1,11 @@
 // var fetchWeather = require('fetchWeather')
-var express = require('express')
+// var express = require('express')
+import express from 'express'
 var app = express()
 var path = require('path')
+app.use(express.static('views'))
 
-//Controllers
-var fetchWeather = require('./fetchWeather')
+import { fetchForecast } from fetchWeather;
 
 app.listen(8000, function () {
     app.get('/', function (req, res) {
