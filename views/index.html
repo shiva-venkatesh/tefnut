@@ -4,9 +4,12 @@
     <title>title</title>
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.css"/>
+
     <link rel="stylesheet" href="views/index.css" />
 
     <script type="text/javascript" src='https://code.jquery.com/jquery-3.2.1.min.js'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
     <script type="text/javascript">
       window.onload = function() {
@@ -20,12 +23,31 @@
   <label for="id_label_single">
     Click this to highlight the single select element
 
-    <select class="js-example-basic-single js-states form-control" id="id_label_single">
-      <option>Alabama</option>
-      <option>Kilimanjaro</option>
-      <option>Ladki parvat ki yaaro</option>
-    </select>
+    <button class="ui button" id="grab-location">Get Location</button>
   </label>
+  <div class="card-container">
+    <div class="ui card">
+      <div class="image">
+        <img src="/images/avatar2/large/kristy.png">
+      </div>
+      <div class="content">
+        <a class="header">Kristy</a>
+        <div class="meta">
+          <span class="date">Joined in 2013</span>
+        </div>
+        <div class="description">
+          Kristy is an art director living in New York.
+        </div>
+      </div>
+      <div class="extra content">
+        <a>
+          <i class="user icon"></i>
+          22 Friends
+        </a>
+      </div>
+    </div>    
+  </div>
+
 
   </body>
 </html>
